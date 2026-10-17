@@ -1,112 +1,144 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUXI Dashboard</title>
-<style>
-body{margin:0;font-family:Arial;background:#0b1020;color:white}
-header{background:#171f36;padding:22px;color:#f4c542;font-size:28px;font-weight:bold}
-main{padding:20px}
-h2{color:#f4c542}
-.card{background:#171f36;padding:20px;border-radius:14px;margin:14px 0}
-.amount{font-size:24px;color:#f4c542;margin-top:10px}
-button{background:#f4c542;color:#101426;border:0;padding:12px 18px;border-radius:8px;font-weight:bold}
-small{color:#c4cada}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXI | Shop & Dashboard</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      color: #172033;
+    }
+    header {
+      background: #101a35;
+      color: white;
+      padding: 22px 16px;
+    }
+    header h1 { margin: 0; color: #f5c542; }
+    header p { margin-bottom: 0; }
+    nav {
+      display: flex;
+      gap: 18px;
+      padding: 14px;
+      background: white;
+      overflow-x: auto;
+    }
+    nav a {
+      color: #101a35;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    main { padding: 16px; max-width: 800px; margin: auto; }
+    .card {
+      background: white;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 12px #0000000c;
+    }
+    .balance {
+      background: #101a35;
+      color: white;
+    }
+    .balance h2 { color: #f5c542; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 12px;
+    }
+    .product {
+      border: 1px solid #e5e8f0;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 105px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #eee;
+    }
+    button {
+      background: #e8b92d;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .note { color: #657087; font-size: 13px; }
+    footer { text-align: center; padding: 22px; color: #657087; }
+  </style>
 </head>
 <body>
-<header>LUXI</header>
-<main>
-<h2>Welcome to LUXI</h2>
-<p>Your account dashboard</p>
-<div class="card">
-<h3>Account Balance</h3>
-<div class="amount">UGX 0</div>
-<small>Demo balance</small>
-</div>
-<div class="card">
-<h3>Daily Earnings</h3>
-<div class="amount">UGX 0</div>
-<small>Demo earnings — no real payments</small>
-</div>
-<div class="card">
-<h3>Referral Commission</h3>
-<p>Level 1: 30%</p>
-<p>Level 2: 5%</p>
-<p>Level 3: 1%</p>
-</div>
-<div class="card">
-<h3>Investment Plans</h3>
-<p>View available plans and their terms.</p>
-<button onclick="alert('Investment plans coming soon')">View Plans</button>
-</div>
-<div class="card">
-<h3>My Referrals</h3>
-<p>Track your invited members here.</p>
-<button onclick="alert('Referral section coming soon')">View Referrals</button>
-</div>
-<p><small>This is a demonstration dashboard. No deposits, withdrawals, or investment returns are processed.</small></p>
-</main>
+  <header>
+    <h1>LUXI</h1>
+    <p>Discover products. Shop with confidence.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#products">Products</a>
+    <a href="#referrals">Referrals</a>
+  </nav>
+
+  <main>
+    <section class="card" id="home">
+      <h2>Welcome to LUXI</h2>
+      <p>Your product shopping and account demo.</p>
+    </section>
+
+    <section class="card balance" id="dashboard">
+      <h2>My Dashboard</h2>
+      <p>Demo balance: UGX 0</p>
+      <p>My purchases: 0</p>
+      <p>My rewards: UGX 0</p>
+      <p class="note">Demo figures only; no real money is held or paid.</p>
+    </section>
+
+    <section class="card" id="products">
+      <h2>Our Products</h2>
+      <div class="products">
+        <div class="product">
+          <img src="https://placehold.co/300x200/e8b92d/172033?text=Product+1" alt="Product 1">
+          <h3>Product 1</h3>
+          <p>UGX 20,000</p>
+          <button onclick="alert('Demo only: purchasing is not enabled yet.')">View item</button>
+        </div>
+        <div class="product">
+          <img src="https://placehold.co/300x200/dce7f7/172033?text=Product+2" alt="Product 2">
+          <h3>Product 2</h3>
+          <p>UGX 50,000</p>
+          <button onclick="alert('Demo only: purchasing is not enabled yet.')">View item</button>
+        </div>
+        <div class="product">
+          <img src="https://placehold.co/300x200/e8e8e8/172033?text=Product+3" alt="Product 3">
+          <h3>Product 3</h3>
+          <p>UGX 100,000</p>
+          <button onclick="alert('Demo only: purchasing is not enabled yet.')">View item</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="referrals">
+      <h2>Referral Programme</h2>
+      <p>Level 1: 30%</p>
+      <p>Level 2: 5%</p>
+      <p>Level 3: 1%</p>
+      <p class="note">Referral rates are displayed for demonstration only. No commissions are paid.</p>
+    </section>
+  </main>
+
+  <footer>LUXI © 2026</footer>
 </body>
-
-  
-<section id="purchase" style="background:#11192d;color:white;padding:20px;border-radius:14px;margin:20px auto;max-width:650px;font-family:Arial">
-  <h2 style="color:#f4c542">LUXI Product Purchase</h2>
-  <p>Select a product to review its price and terms.</p>
-
-  <label for="luxiProduct">Choose product</label>
-  <select id="luxiProduct" onchange="showLuxiProduct()" style="width:100%;padding:12px;margin:12px 0">
-    <option value="20000|5000|15">Product V1 
-      
-<img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=800&q=80" alt="LUXI Product V1" style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
-- UGX 20,000</option>
-    <option value="50000|1000|30">Product 2 
-      
-<img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=800&q=80"
-alt="Gold investment product"
-style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
-- UGX 50,000</option>
-    <option value="100000|20000|40">Product 3
-      
-<img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=800&q=80"
-alt="Gold investment product"
-style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
-- UGX 100,000</option>
-    <option value="300000|50000|60">Product 4
-      
-<img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=800&q=80"
-alt="Gold investment product"
-style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
-- UGX 300,000</option>
-  </select>
-
-  <div style="background:#171f36;padding:15px;border-radius:10px">
-    <p>Purchase price: <strong id="luxiPrice">UGX 20,000</strong></p>
-    <p>Proposed daily earnings: <strong id="luxiDaily">UGX 5,000</strong></p>
-    <p>Duration: <strong id="luxiDays">15 days</strong></p>
-  </div>
-
-  <p style="font-size:13px;color:#c4cada;line-height:1.5">
-    This is a demonstration only. Earnings are not guaranteed, and no payment or investment is processed.
-  </p>
-
-  <button type="button" onclick="alert('Demonstration only: real purchases are not enabled.')" style="width:100%;padding:14px;background:#f4c542;border:0;border-radius:8px;font-weight:bold">
-    Review Purchase
-  </button>
-</section>
-
-<script>
-function showLuxiProduct(){
-  const values = document.getElementById('luxiProduct').value.split('|');
-  document.getElementById('luxiPrice').textContent =
-    'UGX ' + Number(values[0]).toLocaleString('en-UG');
-  document.getElementById('luxiDaily').textContent =
-    'UGX ' + Number(values[1]).toLocaleString('en-UG');
-  document.getElementById('luxiDays').textContent = values[2] + ' days';
-}
-</script>
-
 </html>
 
 
