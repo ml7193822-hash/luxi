@@ -51,5 +51,44 @@ small{color:#c4cada}
 </body>
 </html>
 
+<section id="purchase" style="background:#11192d;color:white;padding:20px;border-radius:14px;margin:20px auto;max-width:650px;font-family:Arial">
+  <h2 style="color:#f4c542">LUXI Product Purchase</h2>
+  <p>Select a product to review its price and terms.</p>
 
+  <label for="luxiProduct">Choose product</label>
+  <select id="luxiProduct" onchange="showLuxiProduct()" style="width:100%;padding:12px;margin:12px 0">
+    <option value="20000|5000|15">Product V1 - UGX 20,000</option>
+    <option value="50000|1000|30">Product 2 - UGX 50,000</option>
+    <option value="100000|20000|40">Product 3 - UGX 100,000</option>
+    <option value="300000|50000|60">Product 4 - UGX 300,000</option>
+  </select>
+
+  <div style="background:#171f36;padding:15px;border-radius:10px">
+    <p>Purchase price: <strong id="luxiPrice">UGX 20,000</strong></p>
+    <p>Proposed daily earnings: <strong id="luxiDaily">UGX 5,000</strong></p>
+    <p>Duration: <strong id="luxiDays">15 days</strong></p>
+  </div>
+
+  <p style="font-size:13px;color:#c4cada;line-height:1.5">
+    This is a demonstration only. Earnings are not guaranteed, and no payment or investment is processed.
+  </p>
+
+  <button type="button" onclick="alert('Demonstration only: real purchases are not enabled.')" style="width:100%;padding:14px;background:#f4c542;border:0;border-radius:8px;font-weight:bold">
+    Review Purchase
+  </button>
+</section>
+
+<script>
+function showLuxiProduct(){
+  const values = document.getElementById('luxiProduct').value.split('|');
+  document.getElementById('luxiPrice').textContent =
+    'UGX ' + Number(values[0]).toLocaleString('en-UG');
+  document.getElementById('luxiDaily').textContent =
+    'UGX ' + Number(values[1]).toLocaleString('en-UG');
+  document.getElementById('luxiDays').textContent = values[2] + ' days';
+}
+</script>
+
+</body>
+</html>
 
